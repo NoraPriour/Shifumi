@@ -6,3 +6,12 @@ function getComputerChoice(){
 } 
 getComputerChoice ()
 console.log(getComputerChoice())
+
+function getHumanChoice () {
+    let choix = prompt ("que jouez-vous?")
+    return choix
+}
+console.log(getHumanChoice())
+
+let humanScore = 0
+let computerScore = 0
