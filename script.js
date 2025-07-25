@@ -4,24 +4,30 @@ function getComputerChoice(){
     let choix = liste[indice]
     return choix
 } 
-getComputerChoice ()
-console.log(getComputerChoice())
+// getComputerChoice ()
+// console.log(getComputerChoice())
 
 function getHumanChoice () {
     let choix = prompt ("que jouez-vous?")
     return choix
 }
-console.log(getHumanChoice())
+// console.log(getHumanChoice())
 
 let humanScore = 0
 let computerScore = 0
 
 function playRound(humanChoice, computerChoice ){
     humanChoice.toLowerCase()
+    let resultat = " "
     if (humanChoice == computerChoice){
-        console.log("égalité")
+        resultat = "égalité"
+       }
+    else if (humanChoice == "ciseaux") {
+        if (computerChoice == "papier"){
+            resultat = "bravo ! bravo ! Tu as coupé le papier :)"
+         } 
+        else {resultat = "trop nul, les ciseaux se sont fait éclater :("}
     }
+    return resultat
 } 
-let test = prompt()
-console.log(test)
-console.log(test.toLowerCase())
+console.log(playRound("papier", "papier"))
