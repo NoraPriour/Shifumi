@@ -4,8 +4,6 @@ function getComputerChoice(){
     let choix = liste[indice]
     return choix
 }
-// getComputerChoice ()
-// console.log(getComputerChoice())
 
 function getHumanChoice () {
     let choix = prompt ("que jouez-vous?")
@@ -16,9 +14,6 @@ function getHumanChoice () {
     }
     return choix
 }
-// console.log(getHumanChoice())
-
-
 
 function playRound(humanChoice, computerChoice ){
     humanChoice.toLowerCase()
@@ -47,14 +42,10 @@ function playRound(humanChoice, computerChoice ){
         else {resultat = "trop nul, ta pierre a été recouverte :("
         }
     }
+    console.log(resultat)
     return resultat
 }
 
-// const humanSelection = getHumanChoice ()
-// const computerSelection = getComputerChoice ()
-
-//console.log(playRound(getHumanChoice(),getComputerChoice()))
-// Etape 6
 function playGame(){
     let humanScore = 0
     let computerScore = 0
