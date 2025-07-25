@@ -9,10 +9,12 @@ function getComputerChoice(){
 
 function getHumanChoice () {
     let choix = prompt ("que jouez-vous?")
-    return choix
-    if (choix != "papier" || choix != "ciseaux" || choix != "pierre") {
-        prompt ("je n'ai pas compris")
+    choix = choix.toLowerCase()
+    while (choix != "papier" && choix != "ciseaux" && choix != "pierre") {
+        choix = prompt ("je n'ai pas compris")
+        choix = choix.toLowerCase()
     }
+    return choix
 }
 // console.log(getHumanChoice())
 
@@ -60,7 +62,6 @@ function playGame(){
     let resultat = " "
     for (let i = 0; i <= 4 ; i++){
         resultat = playRound(getHumanChoice(),getComputerChoice())
-
         if (resultat == "bravo ! bravo ! Tu as coupé le papier :)" ){
             humanScore += 1 
         }
@@ -79,10 +80,9 @@ function playGame(){
         else if (resultat == "trop nul, ta pierre a été recouverte :("){
             computerScore += 1
         }
-        else if (resultat == "egalite") {
+        else if (resultat == "égalité") {
             egaliteScore += 1
-        } 
-
+        }
     }
     console.log(" le score de l'ordinateur est ", computerScore, "ton score est ", humanScore, "nombre d'égalité : ", egaliteScore)
 }
