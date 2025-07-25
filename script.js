@@ -13,8 +13,7 @@ function getHumanChoice () {
 }
 // console.log(getHumanChoice())
 
-let humanScore = 0
-let computerScore = 0
+
 
 function playRound(humanChoice, computerChoice ){
     humanChoice.toLowerCase()
@@ -46,7 +45,42 @@ function playRound(humanChoice, computerChoice ){
     return resultat
 }
 
-const humanSelection = getHumanChoice ()
-const computerSelection = getComputerChoice ()
+// const humanSelection = getHumanChoice ()
+// const computerSelection = getComputerChoice ()
 
-console.log(playRound(humanSelection, computerSelection))
+//console.log(playRound(getHumanChoice(),getComputerChoice()))
+// Etape 6
+function playGame(){
+    let humanScore = 0
+    let computerScore = 0
+    let egaliteScore = 0
+    let resultat = " "
+    for (let i = 0; i <= 4 ; i++){
+        resultat = playRound(getHumanChoice(),getComputerChoice())
+
+        if (resultat == "bravo ! bravo ! Tu as coupé le papier :)" ){
+            humanScore += 1 
+        }
+        else if (resultat == "trop nul, les ciseaux se sont fait éclater :("){
+            computerScore += 1
+        }
+        else if (resultat == "bravo ! bravo ! Tu as recouvert la pierre :)"){
+            humanScore += 1
+        }
+        else if (resultat == "trop nul, les ciseaux ont coupé ton papier :("){
+            computerScore += 1
+        }
+        else if (resultat == "bravo ! bravo ! Tu as éclaté les ciseaux :)"){
+            humanScore += 1
+        }
+        else if (resultat == "trop nul, ta pierre a été recouverte :("){
+            computerScore += 1
+        }
+        else {
+            egaliteScore += 1
+        } 
+
+    }
+    console.log(" le score de l'ordinateur est ", computerScore, "ton score est ", humanScore, "nombre d'égalité : ", egaliteScore)
+}
+playGame()
