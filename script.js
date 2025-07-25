@@ -10,6 +10,9 @@ function getComputerChoice(){
 function getHumanChoice () {
     let choix = prompt ("que jouez-vous?")
     return choix
+    if (choix != "papier" || choix != "ciseaux" || choix != "pierre") {
+        prompt ("je n'ai pas compris")
+    }
 }
 // console.log(getHumanChoice())
 
@@ -35,7 +38,7 @@ function playRound(humanChoice, computerChoice ){
         else {resultat = "trop nul, les ciseaux ont coupé ton papier :("
         }
     }
-    else {
+    else if (humanChoice == "pierre") {
         if (computerChoice == "ciseaux"){
             resultat = "bravo ! bravo ! Tu as éclaté les ciseaux :)"
         }
@@ -76,7 +79,7 @@ function playGame(){
         else if (resultat == "trop nul, ta pierre a été recouverte :("){
             computerScore += 1
         }
-        else {
+        else if (resultat == "egalite") {
             egaliteScore += 1
         } 
 
